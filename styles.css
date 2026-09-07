@@ -1,0 +1,32 @@
+/* Style for the webpage */
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+/* Style for header */
+header {
+    background-color: lightblue;
+}
+/* Style for footer */
+footer {
+    background-color: lightgray;
+}
+
+/* Speacial font for my name */
+#my-name {
+    font-family: Georgia, serif;
+}
+/* Border around my profile picture */
+img[src="profile.png"] {
+    border: 5px solid black;
+}
+
+/* Style for side bar */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 200px;
+    background-color: lightgrey ;
+}
