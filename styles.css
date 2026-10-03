@@ -30,3 +30,90 @@ img[src="profile.png"] {
     height: 200px;
     background-color: lightgrey ;
 }
+/* Navigation bar */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 15px;
+  margin: 20px 0;
+  background-color: #17324d;
+  border-radius: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #315b7d;
+}
+
+/* Tip calculator form */
+.calculator {
+  box-sizing: border-box;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #17324d;
+  border: 2px solid #315b7d;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.calculator h2 {
+  text-align: center;
+}
+
+#tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#tip-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#tip-form input,
+#tip-form select,
+#tip-form button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  border-radius: 6px;
+}
+
+#tip-form input,
+#tip-form select {
+  border: 1px solid #737373;
+  background-color: white;
+  color: #17324d;
+}
+
+#tip-form button {
+  margin-top: 15px;
+  background-color: #17324d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#tip-form button:hover {
+  background-color: #315b7d;
+}
+
+#tip-form input:focus-visible,
+#tip-form select:focus-visible,
+#tip-form button:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid #d99b24;
+  outline-offset: 3px;
+}
