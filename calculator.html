@@ -10,6 +10,7 @@ Purpose: Create a tip calculator form for COSC1350.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tip Calculator | Robert Allee</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="Assignments/calculator.js" defer></script>
 </head>
 <body>
   <header>
@@ -39,14 +40,16 @@ Purpose: Create a tip calculator form for COSC1350.
       >
 
       <label for="service-quality">Service quality</label>
-      <select id="service-quality" name="serviceQuality">
-        <option value="25">Excellent (25%)</option>
-        <option value="20">Good (20%)</option>
-        <option value="15">Fair (15%)</option>
-        <option value="10">Poor (10%)</option>
+     
+<select id="service-quality" name="serviceQuality">
+    <option value="0.25">Excellent (25%)</option>
+    <option value="0.20">Good (20%)</option>
+    <option value="0.15">Fair (15%)</option>
+    <option value="0.10">Poor (10%)</option>
       </select>
 
-      <button type="submit">Calculate Tip</button>
+      <button type="button" id="calculateButton">Calculate Tip</button>
+      <p id="tipResult"></p>
     </form>
   </main>
 
@@ -55,17 +58,27 @@ Purpose: Create a tip calculator form for COSC1350.
       robertallee@westernwyoming.edu
     </a>
   </footer>
+  
+<script>
+document.getElementById("calculateButton").addEventListener("click", function() {
+    // Get the bill amount and tip percentage.
+    const billAmount = Number(document.getElementById("bill-amount").value);
+    const tipPercentage = Number(document.getElementById("service-quality").value);
 
-  <script>
-    document.getElementById("tip-form").addEventListener("submit", function(event) {
-      event.preventDefault();
+    // Check for a valid bill amount.
+    if (billAmount <= 0) {
+        document.getElementById("tipResult").textContent =
+            "Please enter a valid bill amount.";
+        return;
+    }
 
-      const billAmount = Number(document.getElementById("bill-amount").value);
-      const tipPercentage = Number(document.getElementById("service-quality").value);
+    // Calculate the tip.
+    const tipAmount = billAmount * tipPercentage;
 
-      console.log("Bill amount:", billAmount);
-      console.log("Tip percentage:", tipPercentage);
-    });
-  </script>
+    // Display the result.
+    document.getElementById("tipResult").textContent =
+        "Your tip amount is: $" + tipAmount.toFixed(2);
+});
+</script>
 </body>
 </html>
